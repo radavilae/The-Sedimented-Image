@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Imagen Sedimentada</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      #home {
+        text-align: center;
+        padding: 50px;
+      }
+
+      #main-title {
+        cursor: pointer;
+        animation: blink 1s infinite;
+      }
+
+      #content {
+        display: none;
+        padding: 20px;
+      }
+
+      .typewriter-text {
+        font-size: 1em;
+        font-weight: normal;
+        text-align: center;
+        margin: 20px auto;
+        width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid rgb(255, 255, 255);
+        animation: typing 10s steps(50, end);
+      }
+
+      .video-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px auto;
+      }
+
+      .video-container video {
+        width: 45%;
+        max-width: 700px;
+        height: auto;
+        border: 2px solid #ffffff;
+        border-radius: 8px;
+      }
+
+      .footer-text {
+        text-align: center;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid rgb(255, 255, 255);
+        animation: typingFooter 5s steps(30, end);
+      }
+
+      @media (max-width: 768px) {
+        .video-container {
+          flex-wrap: wrap;
+        }
+
+        .video-container video {
+          width: 90%;
+          margin: 10px 0;
+        }
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes typingFooter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="home">
+      <h1 id="main-title" onclick="navigateToContent()">
+        LA IMAGEN SEDIMENTADA
+      </h1>
+    </div>
+
+    <div id="content">
+      <div class="typewriter-text">
+        <i>
+          « Forcing things into dialogue with each other as a way of renewing
+          language itself »
+        </i>
+        <br />John Akomfrah
+      </div>
+
+      <div class="video-container">
+        <video autoplay loop>
+          <source src="/video/la-imagen-sedimentada.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="footer-text">
+        The Sedimented Image | Fluxus, 2025. <br />
+        Raúl Dávila & Zara Huband<br />
+        (CC)
+      </div>
+    </div>
+
+    <script>
+      function navigateToContent() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
